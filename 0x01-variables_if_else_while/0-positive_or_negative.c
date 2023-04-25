@@ -2,21 +2,34 @@
 #include <stdlib.h>
 #include <time.h>
 
-int main() {
-    srand(time(NULL)); // seed the random number generator with the current time
-    int n = rand() % RAND_MAX - RAND_MAX / 2; // generate a random number between -RAND_MAX/2 and RAND_MAX/2
-    
-    printf("The number %d ", n);
-    
-    if (n > 0) {
-        printf("is positive\n");
-    } else if (n == 0) {
-        printf("is zero\n");
-    } else {
-        printf("is negative\n");
-    }
-    
-    return 0;
-}
+/**
+ * main - main function to generate a random number
+ *
+ * Return: Always 0 (Success)
+ *
+ */
 
+int main(void)
+{
+	int n;
+
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
+
+	if (n > 0)
+	{
+	        printf("%d is positive\n",n);
+	}
+	else if (n == 0)
+	{	
+		printf("%d is zero\n",n);
+	}
+	else if (n < 0)
+	{
+		printf("%d is negative\n",n);
+	}
+	return (0);
+}	
+
+	
 
